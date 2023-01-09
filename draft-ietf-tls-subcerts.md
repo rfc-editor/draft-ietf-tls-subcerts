@@ -414,7 +414,7 @@ consists of a SignatureSchemeList (defined in {{RFC8446}}):
 
 ~~~~~~~~~~
    struct {
-     SignatureScheme supported_signature_algorithm<2..2^16-2>;
+     SignatureScheme supported_signature_algorithms<2..2^16-2>;
    } SignatureSchemeList;
 ~~~~~~~~~~
 
