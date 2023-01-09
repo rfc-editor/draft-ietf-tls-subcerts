@@ -253,7 +253,7 @@ example).  These
 mechanisms, however, incur per-transaction latency, since the front-end
 server has to interact with a back-end server that holds a private key.  The
 mechanism proposed in this document allows the delegation to be done
-off-line, with no per-transaction latency.  The figure below compares the
+offline, with no per-transaction latency.  The figure below compares the
 message flows for these two mechanisms
 with (D)TLS 1.3 {{RFC8446}} {{!RFC9147}}.
 
@@ -704,7 +704,7 @@ END
 
 # Example Certificate
 
-The following is an example of a delegation certificate which satisfies the
+The following is an example of a delegation certificate that satisfies the
 requirements described in {{certificate-requirements}} (i.e., uses the DelegationUsage extension
 and has the digitalSignature KeyUsage).
 
