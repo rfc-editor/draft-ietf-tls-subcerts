@@ -62,15 +62,18 @@ informative:
         ins: J. Somorovsky
       seriesinfo: Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security
       date: 2015
+      target: https://dl.acm.org/doi/10.1145/2810103.2813657
   KEYLESS:
       title: An Analysis of TLS Handshake Proxying
       author:
       -
-        ins: N. Sullivan
-      -
         ins: D. Stebila
+
+      - 
+        ins: N. Sullivan
       seriesinfo: IEEE Trustcom/BigDataSE/ISPA 2015
       date: 2015
+      target: https://ieeexplore.ieee.org/document/7345293
   BLEI:
       title: "Chosen Ciphertext Attacks against Protocols Based on RSA
       Encryption Standard PKCS #1"
@@ -80,6 +83,7 @@ informative:
       seriesinfo: "Advances in Cryptology -- CRYPTO'98, LNCS vol. 1462, pages:
       1-12"
       date: 1998
+      target: https://link.springer.com/chapter/10.1007/BFb0055716
   ROBOT:
       title: "Return Of Bleichenbacher's Oracle Threat (ROBOT)"
       author:
@@ -91,6 +95,7 @@ informative:
         ins: C. Young
       seriesinfo: "27th USENIX Security Symposium"
       date: 2018
+      target: https://www.usenix.org/conference/usenixsecurity18/presentation/bock
 
 --- abstract
 
