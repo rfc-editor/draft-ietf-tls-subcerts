@@ -628,8 +628,8 @@ attack against delegated credentials in (D)TLS 1.3.
 
 When (D)TLS 1.2 servers support RSA key exchange, they may be vulnerable to attacks
 that allow forging an RSA signature over an arbitrary message [BLEI].
-TLS 1.2 {{?RFC5246}} (Section 7.4.7.1.) describes a mitigation strategy requiring
-careful implementation of timing-resistant countermeasures for preventing these attacks.
+TLS 1.2 {{?RFC5246}} describes a mitigation strategy requiring
+careful implementation of timing-resistant countermeasures for preventing these attacks (see {{Section 7.4.7.1 of ?RFC5246}}).
 Experience shows that, in practice, server implementations may fail to fully
 stop these attacks due to the complexity of this mitigation [ROBOT].
 For (D)TLS 1.2 servers that support RSA key exchange using a DC-enabled end-entity
