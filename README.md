@@ -49,13 +49,11 @@ To create your own output files, use the [tools webservice](https://author-tools
 
 ## Viewing Diffs
 Diffs via GitHub:
-* [All editing updates made before AUTH48](https://github.com/rfc-editor/rfc9345-AUTH48/compare/fe12bde..52bb939)
+* [All editing updates made before AUTH48](https://github.com/rfc-editor/draft-ietf-tls-subcerts/compare/fe12bde..52bb939)
 
 More information on using GitHub to view diffs can be found here: [Comparing commits](https://docs.github.com/en/github/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
 
-The following diff files are available via www.rfc-editor.org:
-* [https://www.rfc-editor.org/authors/rfc9345-diff.html](https://www.rfc-editor.org/authors/rfc9345-diff.html) (all changes since the document entered the RFC Editor Queue)
-* [https://www.rfc-editor.org/authors/rfc9345-rfcdiff.html](https://www.rfc-editor.org/authors/rfc9345-rfcdiff.html) (side-by-side view of all changes since the document entered the RFC Editor Queue)
+Note that we will use GitHub diff functioanlity throughout this process.  Please view the diffs associated with the various PRs.
 
 ## Approving the Document 
 This document is being edited in Markdown.  Once the content is stable, the Markdown will be converted to XML and formatted as an RFC.  Your final approval means you approve both the content and format.
