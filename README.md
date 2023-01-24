@@ -1,7 +1,7 @@
 
 
 
-# AUTH48 for RFC-to-be 9345 <draft-ietf-tls-subcerts-15>
+# AUTH48 for RFC-to-be 9345 (draft-ietf-tls-subcerts-15)
 This repository is for managing document updates for RFC-to-be 9345 during AUTH48. 
 
 Please see the [License](https://github.com/rfc-editor/draft-ietf-tls-subcerts/blob/master/LICENSE.md). The [IETF Note Well](https://github.com/rfc-editor/draft-ietf-tls-subcerts/blob/master/note-well.md) applies.
@@ -16,11 +16,11 @@ Authors, AD, WG chairs, and document shepherd, please ensure that your GitHub no
 This document is being edited in Markdown.  Once the content is stable, the Markdown will be converted to XML and formatted as an RFC.  Your final approval means you approve both the content and format.
 
 ## Issue Tracking
-The initial version of rfc9345-to-be.md is a copy of draft-ietf-tls-subcerts.md that was approved for publication. 
+The initial version of draft-ietf-tls-subcerts.md is the same as what was approved for publication. 
 
-The current version of rfc9345-to-be.md has been edited minimally for correctness. See PR #NNN.
+The current version of draft-ietf-tls-subcerts.md has been edited minimally for correctness. See PRs [#2](https://github.com/rfc-editor/draft-ietf-tls-subcerts/pull/2) and [#6](https://github.com/rfc-editor/draft-ietf-tls-subcerts/pull/6).
 
-The initial version of the file has been edited minimally for correctness.  The RFC Production Center's suggested updates have been added as PRs.  Open-ended questions and FYIs have been added as issues.  Please accept the PRs or propose alternate updates.  For the issues, provide your answers in the comments or add PRs to address the issues.  Use the issue labels to indicate their status:
+The initial version of the file has been edited minimally for correctness.   The RFC Production Center's additional suggested updates have been added as PRs.  Open-ended questions and FYIs have been added as issues.  Please approve the PRs or propose alternate updates.  For the issues, provide your answers in the comments or add PRs to address the issues.  Use the issue labels to indicate their status:
 * rfced - initial label of RFC Editor questions and FYIs (keep this label if the issue is still active).
 * question - a follow-up question has been added to the issue discussion. Use @mention to identify the participant who should answer. 
 * AD approval required - the resolution of the issue requires the AD to review and approve the change.
@@ -28,12 +28,12 @@ The initial version of the file has been edited minimally for correctness.  The 
 
 Feel free to add new issues and PRs for new edits and questions. 
 
-The editor will close the issue when it has been addressed either by accepting a pull request or simply closing the issue if no changes are needed. 
+The RPC editor will close the issue when it has been addressed either by accepting a pull request or simply closing the issue if no changes are needed. 
 
 ## Pull Requests
 If you would like to submit changes, please create a pull request and identify one or more issues that the pull request closes in the comments. 
 
-If the editor creates the PR, the editor will expect feedback from the reviewer before merging the PR. 
+If the RPC editor creates the PR, the editor expects feedback from the reviewer before merging the PR. 
 
 
 ## Viewing Markdown Outputs
