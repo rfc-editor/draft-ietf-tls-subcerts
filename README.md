@@ -20,7 +20,7 @@ The initial version of draft-ietf-tls-subcerts.md is the same as what was approv
 
 The current version of draft-ietf-tls-subcerts.md has been edited minimally for correctness. See PRs [#2](https://github.com/rfc-editor/draft-ietf-tls-subcerts/pull/2) and [#6](https://github.com/rfc-editor/draft-ietf-tls-subcerts/pull/6).
 
-The initial version of the file has been edited minimally for correctness.   The RFC Production Center's additional suggested updates have been added as PRs.  Open-ended questions and FYIs have been added as issues.  Please approve the PRs or propose alternate updates.  For the issues, provide your answers in the comments or add PRs to address the issues.  Use the issue labels to indicate their status:
+The RFC Production Center's additional suggested updates have been added as PRs.  Open-ended questions and FYIs have been added as issues.  Please approve the PRs or propose alternate updates.  For the issues, provide your answers in the comments or add PRs to address them.  Use the issue labels to indicate their status:
 * rfced - initial label of RFC Editor questions and FYIs (keep this label if the issue is still active).
 * question - a follow-up question has been added to the issue discussion. Use @mention to identify the participant who should answer. 
 * AD approval required - the resolution of the issue requires the AD to review and approve the change.
@@ -28,28 +28,24 @@ The initial version of the file has been edited minimally for correctness.   The
 
 Feel free to add new issues and PRs for new edits and questions. 
 
-The RPC editor will close the issue when it has been addressed either by accepting a pull request or simply closing the issue if no changes are needed. 
+The RPC Editor will close an issue when it has been addressed either by accepting a pull request or simply closing the issue if no changes are needed. 
 
 ## Pull Requests
 If you would like to submit changes, please create a pull request and identify one or more issues that the pull request closes in the comments. 
 
 If the RPC editor creates the PR, the editor expects feedback from the reviewer before merging the PR. 
 
-
-## Viewing Markdown Outputs
-Output files may be viewed here:
-* [https://www.rfc-editor.org/authors/rfc9345.txt](https://www.rfc-editor.org/authors/rfc9345.txt)
-
 Once the content of the .md file is stable and an XML file has been created, the following files will also be provided:
 * [https://www.rfc-editor.org/authors/rfc9345.html](https://www.rfc-editor.org/authors/rfc9345.html)
 * [https://www.rfc-editor.org/authors/rfc9345.pdf](https://www.rfc-editor.org/authors/rfc9345.pdf)
+* [https://www.rfc-editor.org/authors/rfc9345.txt](https://www.rfc-editor.org/authors/rfc9345.txt)
 * [https://www.rfc-editor.org/authors/rfc9345.xml](https://www.rfc-editor.org/authors/rfc9345.xml)
    
 To create your own output files, use the [tools webservice](https://author-tools.ietf.org/) and select one of the output options.
 
 ## Viewing Diffs
 Diffs via GitHub:
-* [All editing updates made before AUTH48](https://github.com/rfc-editor/draft-ietf-tls-subcerts/compare/fe12bde..52bb939)
+* [All editing updates made before AUTH48](https://github.com/rfc-editor/draft-ietf-tls-subcerts/compare/3bb5f1a..9ab138d)
 
 More information on using GitHub to view diffs can be found here: [Comparing commits](https://docs.github.com/en/github/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
 
