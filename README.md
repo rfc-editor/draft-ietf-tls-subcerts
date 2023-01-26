@@ -13,7 +13,7 @@ GitHub features that will be used:
 
 Authors, AD, WG chairs, and document shepherd, please ensure that your GitHub notification settings are set such that you can participate promptly in discussions of issues and pull requests. For more information, please see [Configuring notifications](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications).
 
-This document is being edited in Markdown.  Once the content is stable, the Markdown will be converted to XML and formatted as an RFC.  Your final approval means you approve both the content and format.
+This document is being edited in kramdown-rfc markdown.  Once the content is stable, the markdown will be converted to RFCXML and formatted as an RFC.  Your final approval means you approve both the content and format.
 
 ## Issue Tracking
 The initial version of draft-ietf-tls-subcerts.md is the same as what was approved for publication. 
@@ -49,10 +49,10 @@ Diffs via GitHub:
 
 More information on using GitHub to view diffs can be found here: [Comparing commits](https://docs.github.com/en/github/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
 
-Note that we will use GitHub diff functioanlity throughout this process.  Please view the diffs associated with the various PRs.
+Note that we will use GitHub diff functionality throughout this process.  Please view the diffs associated with the various PRs.
 
 ## Approving the Document 
-This document is being edited in Markdown.  Once the content is stable, the Markdown will be converted to XML and formatted as an RFC.  Your final approval means you approve both the content and format.
+This document is being edited in kramdown-rfc markdown.  Once the content is stable, the markdown will be converted to RFCXML and formatted as an RFC.  Your final approval means you approve both the content and format.
 
 To approve your RFC for publication, **please reply to the AUTH48 email** stating that you approve this RFC for publication.  Please use **REPLY ALL**, as all the parties CC’ed on the message need to see your approval.
 
