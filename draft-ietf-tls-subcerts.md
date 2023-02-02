@@ -437,8 +437,8 @@ delegated credentials sent as extensions to any other certificate.
 The algorithm field MUST be of a type advertised by the client in the
 "signature_algorithms" extension of the ClientHello message, and
 the dc_cert_verify_algorithm field MUST be of a
-type advertised by the client in the SignatureSchemeList and is
-considered not valid otherwise.  Clients that receive non-valid delegated
+type advertised by the client in the SignatureSchemeList; otherwise, the credential is
+considered not valid.  Clients that receive non-valid delegated
 credentials MUST terminate the connection with an "illegal_parameter"
 alert.
 
