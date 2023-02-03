@@ -596,7 +596,7 @@ authentication because issuing parties compute the corresponding signature using
 ## Revocation of Delegated Credentials
 
 Delegated credentials do not provide any additional form of early revocation.
-Since it is short lived, the expiry of the delegated credential revokes
+Since it is short-lived, the expiry of the delegated credential revokes
 the credential.  Revocation of the long-term private key that signs the
 delegated credential (from the end-entity certificate) also implicitly revokes
 the delegated credential.
