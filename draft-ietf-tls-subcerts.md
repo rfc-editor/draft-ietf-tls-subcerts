@@ -127,7 +127,7 @@ an outage at a CA will negatively affect the uptime of the TLS-fronted service.
 Typically, a (D)TLS server uses a certificate provided by some entity other than
 the operator of the server (a CA) {{!RFC8446}}
 {{!RFC5280}}.  This organizational separation makes the (D)TLS server operator
-dependent on the CA for some aspects of its operations; for example:
+dependent on the CA for some aspects of its operations. For example:
 
 * Whenever the server operator wants to deploy a new certificate, it has to
   interact with the CA.
