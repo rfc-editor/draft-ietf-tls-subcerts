@@ -553,7 +553,7 @@ its validity periods, which should also be taken into account.
 
 This document registers the "delegated_credential" extension in the
 "TLS ExtensionType Values" registry.  The "delegated_credential"
-extension has been assigned code point 34.  The IANA registry
+extension has been assigned the ExtensionType value 34.  The IANA registry
 lists this extension as "Recommended" (i.e., "Y") and indicates that
 it may appear in the ClientHello (CH), CertificateRequest (CR),
 or Certificate (CT) messages in (D)TLS 1.3 {{RFC8446}} {{RFC9147}}.
