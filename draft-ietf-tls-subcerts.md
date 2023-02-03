@@ -7,8 +7,8 @@ date: January 2023
 category: std
 
 ipr: trust200902
-# area: Security
-# workgroup: tls
+area: Security
+workgroup: tls
 keyword:
 
 stand_alone: yes
