@@ -580,7 +580,7 @@ cannot create new delegated credentials, but they can
 impersonate the compromised party in new TLS connections until the
 delegated credential expires.
 
-Thus, delegated credentials should not be used to send a delegation to an untrusted party; rather they
+Thus, delegated credentials should not be used to send a delegation to an untrusted party. Rather, they
 are meant to be used between parties that have some trust relationship with each
 other.  The secrecy of the delegated credential's private key is thus important, and
 access control mechanisms SHOULD be used to protect it, including file system
