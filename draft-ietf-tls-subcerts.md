@@ -121,7 +121,7 @@ However, short-lived certificates need to be renewed more frequently than
 long-lived certificates.  If an external Certification Authority (CA) is unable to issue a certificate in
 time to replace a deployed certificate, the server would no longer be able to
 present a valid certificate to clients.  With short-lived certificates, there is
-a smaller window of time to renew the certificates and therefore a higher risk that
+a smaller window of time to renew a certificate and therefore a higher risk that
 an outage at a CA will negatively affect the uptime of the TLS-fronted service.
 
 Typically, a (D)TLS server uses a certificate provided by some entity other than
