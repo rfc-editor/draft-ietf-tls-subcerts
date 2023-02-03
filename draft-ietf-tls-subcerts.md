@@ -97,7 +97,7 @@ informative:
 --- abstract
 
 The organizational separation between operators of TLS and DTLS
-endpoints and the certification authority (CA) can create limitations.  For
+endpoints and the certification authority can create limitations.  For
 example, the lifetime of certificates, how they may be used, and the
 algorithms they support are ultimately determined by the
 certification authority.  This document describes a mechanism to
