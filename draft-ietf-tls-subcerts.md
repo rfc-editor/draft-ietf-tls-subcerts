@@ -630,8 +630,8 @@ Additionally, the "DTLS-Only" column is assigned the value "N".
 This document also defines an ASN.1 module for the DelegationUsage
 certificate extension in {{module}}.  IANA has registered value 95 for
 "id-mod-delegated-credential-extn" in the "SMI Security for PKIX Module
-Identifier" (1.3.5.1.5.5.7.0) registry.  An OID for the DelegationUsage certificate extension
-is not needed as it is already assigned to the extension from
+Identifier" (1.3.6.1.5.5.7.0) registry.  An OID for the DelegationUsage certificate extension
+is not needed, as it is already assigned to the extension from
 Cloudflare's IANA Private Enterprise Number (PEN) arc.
 
 # Security Considerations
