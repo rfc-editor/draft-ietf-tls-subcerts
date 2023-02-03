@@ -535,7 +535,7 @@ without requiring CAs to issue new intermediate certificates.
 # Operational Considerations
 
 The operational considerations documented in this section should be
-taken into consideration when using Delegated Certificates.
+taken into consideration when using Delegated Credentials.
 
 ## Client Clock Skew
 
