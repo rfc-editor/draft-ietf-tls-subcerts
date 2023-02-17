@@ -38,19 +38,21 @@ author:
 
 normative:
   X.680:
+      target: https://www.itu.int/rec/T-REC-X.680
       title: "Information technology - Abstract Syntax Notation One (ASN.1): Specification of basic notation"
-      date: November 2015
+      date: February 2021
       author:
         org: ITU-T
       seriesinfo:
-        ISO/IEC: 8824-1:2015
+        ISO/IEC: 8824-1:2021
   X.690:
+      target: https://www.itu.int/rec/T-REC-X.690
       title: "Information technology - ASN.1 encoding Rules: Specification of Basic Encoding Rules (BER), Canonical Encoding Rules (CER) and Distinguished Encoding Rules (DER)"
-      date: November 2015
+      date: February 2021
       author:
         org: ITU-T
       seriesinfo:
-        ISO/IEC: 8825-1:2015
+        ISO/IEC: 8825-1:2021
 
 informative:
   XPROT:
@@ -64,15 +66,18 @@ informative:
         ins: J. Somorovsky
       seriesinfo: Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security
       date: 2015
+      target: https://dl.acm.org/doi/10.1145/2810103.2813657
   KEYLESS:
       title: An Analysis of TLS Handshake Proxying
       author:
       -
-        ins: N. Sullivan
-      -
         ins: D. Stebila
+
+      - 
+        ins: N. Sullivan
       seriesinfo: IEEE Trustcom/BigDataSE/ISPA 2015
       date: 2015
+      target: https://ieeexplore.ieee.org/document/7345293
   BLEI:
       title: "Chosen Ciphertext Attacks against Protocols Based on RSA
       Encryption Standard PKCS #1"
@@ -82,6 +87,7 @@ informative:
       seriesinfo: "Advances in Cryptology -- CRYPTO'98, LNCS vol. 1462, pages:
       1-12"
       date: 1998
+      target: https://link.springer.com/chapter/10.1007/BFb0055716
   ROBOT:
       title: "Return Of Bleichenbacher's Oracle Threat (ROBOT)"
       author:
@@ -93,6 +99,7 @@ informative:
         ins: C. Young
       seriesinfo: "27th USENIX Security Symposium"
       date: 2018
+      target: https://www.usenix.org/conference/usenixsecurity18/presentation/bock
 
 --- abstract
 
@@ -100,7 +107,7 @@ The organizational separation between operators of TLS and DTLS
 endpoints and the certification authority can create limitations.  For
 example, the lifetime of certificates, how they may be used, and the
 algorithms they support are ultimately determined by the
-certification authority.  This document describes a mechanism to
+CA.  This document describes a mechanism to
 to overcome some of these limitations by enabling operators to
 delegate their own credentials for use in TLS and DTLS without breaking
 compatibility with peers that do not support this specification.
@@ -164,12 +171,7 @@ Back-End: Service with access to a private key
 
 # Conventions and Terminology
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-"SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-"OPTIONAL" in this document are to be interpreted as described in BCP
-14 {{!RFC2119}} {{!RFC8174}} when, and only when, they appear in all
-capitals, as shown here.
-
+{::boilerplate bcp14-tagged}
 
 # Solution Overview
 
@@ -414,7 +416,7 @@ consists of a SignatureSchemeList (defined in {{RFC8446}}):
 
 ~~~~~~~~~~
    struct {
-     SignatureScheme supported_signature_algorithm<2..2^16-2>;
+     SignatureScheme supported_signature_algorithms<2..2^16-2>;
    } SignatureSchemeList;
 ~~~~~~~~~~
 
@@ -435,7 +437,7 @@ CertificateEntry of its end-entity certificate; the client SHOULD ignore
 delegated credentials sent as extensions to any other certificate.
 
 The algorithm field MUST be of a type advertised by the client in the
-"signature_algorithms" extension of the ClientHello message and
+"signature_algorithms" extension of the ClientHello message, and
 the dc_cert_verify_algorithm field MUST be of a
 type advertised by the client in the SignatureSchemeList and is
 considered not valid otherwise.  Clients that receive non-valid delegated
@@ -487,7 +489,7 @@ delegation certificate's notBefore value plus DelegatedCredential.cred.valid_tim
 1. Verify that dc_cert_verify_algorithm matches
    the scheme indicated in the peer's CertificateVerify message and that the
    algorithm is allowed for use with delegated credentials.
-1. Verify that the end-entity certificate satisfies the conditions in
+1. Verify that the end-entity certificate satisfies the conditions described in
    {{certificate-requirements}}.
 1. Use the public key in the peer's end-entity certificate to verify the
    signature of the credential using the algorithm indicated by
@@ -562,7 +564,7 @@ Additionally, the "DTLS-Only" column is assigned the value "N".
 This document also defines an ASN.1 module for the DelegationUsage
 certificate extension in {{module}}.  IANA has registered value 95 for
 "id-mod-delegated-credential-extn" in the "SMI Security for PKIX Module
-Identifier" (1.3.5.1.5.5.7.0) registry.  An OID for the DelegationUsage certificate extension
+Identifier" (1.3.6.1.5.5.7.0) registry.  An OID for the DelegationUsage certificate extension
 is not needed, as it is already assigned to the extension from
 Cloudflare's IANA Private Enterprise Number (PEN) arc.
 
@@ -628,8 +630,10 @@ attack against delegated credentials in (D)TLS 1.3.
 
 When (D)TLS 1.2 servers support RSA key exchange, they may be vulnerable to attacks
 that allow forging an RSA signature over an arbitrary message [BLEI].
-TLS 1.2 {{?RFC5246}} (Section 7.4.7.1.) describes a mitigation strategy requiring
-careful implementation of timing-resistant countermeasures for preventing these attacks.
+The TLS 1.2 specification describes a strategy for preventing these attacks
+ that requires careful implementation of timing-resistant countermeasures.
+(See {{Section 7.4.7.1 of RFC5246}}.)
+
 Experience shows that, in practice, server implementations may fail to fully
 stop these attacks due to the complexity of this mitigation [ROBOT].
 For (D)TLS 1.2 servers that support RSA key exchange using a DC-enabled end-entity
