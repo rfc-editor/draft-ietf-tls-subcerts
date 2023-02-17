@@ -105,7 +105,7 @@ The organizational separation between operators of TLS and DTLS
 endpoints and the certification authority can create limitations.  For
 example, the lifetime of certificates, how they may be used, and the
 algorithms they support are ultimately determined by the
-certification authority.  This document describes a mechanism to
+CA.  This document describes a mechanism to
 to overcome some of these limitations by enabling operators to
 delegate their own credentials for use in TLS and DTLS without breaking
 compatibility with peers that do not support this specification.
@@ -505,7 +505,7 @@ CertificateEntry of its end-entity certificate; the client SHOULD ignore
 delegated credentials sent as extensions to any other certificate.
 
 The algorithm field MUST be of a type advertised by the client in the
-"signature_algorithms" extension of the ClientHello message and
+"signature_algorithms" extension of the ClientHello message, and
 the dc_cert_verify_algorithm field MUST be of a
 type advertised by the client in the SignatureSchemeList and is
 considered not valid otherwise.  Clients that receive non-valid delegated
@@ -557,7 +557,7 @@ delegation certificate's notBefore value plus DelegatedCredential.cred.valid_tim
 1. Verify that dc_cert_verify_algorithm matches
    the scheme indicated in the peer's CertificateVerify message and that the
    algorithm is allowed for use with delegated credentials.
-1. Verify that the end-entity certificate satisfies the conditions in
+1. Verify that the end-entity certificate satisfies the conditions described in
    {{certificate-requirements}}.
 1. Use the public key in the peer's end-entity certificate to verify the
    signature of the credential using the algorithm indicated by
@@ -684,8 +684,8 @@ Delegated credentials can be valid for 7 days (by default) and it is much easier
 service to create delegated credentials than a certificate signed by a CA.  A
 service could determine the client time and clock skew by creating several
 delegated credentials with different expiry timestamps and observing whether the
-client would accept it.  Client time could be unique and thus privacy-sensitive
-clients, such as browsers in incognito mode, who do not trust the service might
+client would accept it.  Client time could be unique; thus privacy-sensitive
+clients, such as browsers in incognito mode, who do not trust the service, might
 not want to advertise support for delegated credentials or limit the number of
 probes that a server can perform.
 
