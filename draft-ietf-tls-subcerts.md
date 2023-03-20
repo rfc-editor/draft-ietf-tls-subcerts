@@ -613,10 +613,11 @@ may result in resuming connections for which the DC has expired.
 ## Privacy Considerations
 
 Delegated credentials can be valid for 7 days (by default), and it is much easier for a
-service to create delegated credentials than a certificate signed by a CA.  A
-service could determine the client time and clock skew by creating several
-delegated credentials with different expiry timestamps and observing whether the
-client would accept it.  Since client time can be unique to a particular client, privacy-sensitive
+service to create delegated credentials than a certificate signed by a CA.  
+A service could determine the client
+time and clock skew by creating several delegated credentials with
+different expiry timestamps and observing which credentials the client accepts.
+Since client time can be unique to a particular client, privacy-sensitive
 clients who do not trust the service, such as browsers in incognito mode, might
 not want to advertise support for delegated credentials, or might limit the number of
 probes that a server can perform.
