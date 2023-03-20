@@ -457,7 +457,7 @@ If the extension is present, the client MAY send a delegated credential; if the
 extension is not present, the client MUST NOT send a delegated credential.
 When a (D)TLS version negotiated is less than 1.3, the client MUST ignore this extension.
 
-The client MUST send the DC as an extension in the
+The client MUST send the delegated credential as an extension in the
 CertificateEntry of its end-entity certificate; the server SHOULD ignore
 delegated credentials sent as extensions to any other certificate.
 
@@ -607,7 +607,7 @@ the delegated credential.
 If a peer decides to cache the certificate chain and re-validate it
 when resuming a connection, they SHOULD also cache the
 associated delegated credential and re-validate it.  Failing to do so
-may result in resuming connections for which the DC has expired.
+may result in resuming connections for which the delegated credential has expired.
 
 ## Privacy Considerations
 
