@@ -293,7 +293,7 @@ Back-End: Service with access to a private key
 These two mechanisms can be complementary.  A server could use
 delegated credentials for clients that support them, while using a
 server-side mechanism to support legacy clients.  Both mechanisms
-require a trusted relationship between the Front-End and Back-End --
+require a trusted relationship between the front-end and back-end --
 the delegated credential can be used in place of a certificate
 private key.
 
@@ -536,7 +536,7 @@ without requiring CAs to issue new intermediate certificates.
 # Operational Considerations
 
 The operational considerations documented in this section should be
-taken into consideration when using Delegated Credentials.
+taken into consideration when using delegated credentials.
 
 ## Client Clock Skew
 
@@ -570,7 +570,7 @@ Cloudflare's IANA Private Enterprise Number (PEN) arc.
 # Security Considerations
 
 The security considerations documented in this section should be
-taken into consideration when using Delegated Certificates.
+taken into consideration when using delegated credentials.
 
 ## Security of Delegated Credential's Private Key
 
