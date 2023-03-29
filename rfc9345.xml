@@ -36,7 +36,7 @@
         <email>ekr@rtfm.com</email>
       </address>
     </author>
-    <date year="2023" month="January"/>
+    <date year="2023" month="March"/>
     <area>Security</area>
     <workgroup>tls</workgroup>
     <abstract>
@@ -582,102 +582,11 @@ allow the attacker to impersonate a server for the lifetime of the certificate.<
           </front>
           <seriesInfo name="ISO/IEC" value="8825-1:2021"/>
         </reference>
-        <reference anchor="RFC8446">
-          <front>
-            <title>The Transport Layer Security (TLS) Protocol Version 1.3</title>
-            <author fullname="E. Rescorla" initials="E." surname="Rescorla">
-              <organization/>
-            </author>
-            <date month="August" year="2018"/>
-            <abstract>
-              <t>This document specifies version 1.3 of the Transport Layer Security (TLS) protocol.  TLS allows client/server applications to communicate over the Internet in a way that is designed to prevent eavesdropping, tampering, and message forgery.</t>
-              <t>This document updates RFCs 5705 and 6066, and obsoletes RFCs 5077, 5246, and 6961.  This document also specifies new requirements for TLS 1.2 implementations.</t>
-            </abstract>
-          </front>
-          <seriesInfo name="RFC" value="8446"/>
-          <seriesInfo name="DOI" value="10.17487/RFC8446"/>
-        </reference>
-        <reference anchor="RFC5280">
-          <front>
-            <title>Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile</title>
-            <author fullname="D. Cooper" initials="D." surname="Cooper">
-              <organization/>
-            </author>
-            <author fullname="S. Santesson" initials="S." surname="Santesson">
-              <organization/>
-            </author>
-            <author fullname="S. Farrell" initials="S." surname="Farrell">
-              <organization/>
-            </author>
-            <author fullname="S. Boeyen" initials="S." surname="Boeyen">
-              <organization/>
-            </author>
-            <author fullname="R. Housley" initials="R." surname="Housley">
-              <organization/>
-            </author>
-            <author fullname="W. Polk" initials="W." surname="Polk">
-              <organization/>
-            </author>
-            <date month="May" year="2008"/>
-            <abstract>
-              <t>This memo profiles the X.509 v3 certificate and X.509 v2 certificate revocation list (CRL) for use in the Internet.  An overview of this approach and model is provided as an introduction.  The X.509 v3 certificate format is described in detail, with additional information regarding the format and semantics of Internet name forms.  Standard certificate extensions are described and two Internet-specific extensions are defined.  A set of required certificate extensions is specified.  The X.509 v2 CRL format is described in detail along with standard and Internet-specific extensions.  An algorithm for X.509 certification path validation is described.  An ASN.1 module and examples are provided in the appendices.  [STANDARDS-TRACK]</t>
-            </abstract>
-          </front>
-          <seriesInfo name="RFC" value="5280"/>
-          <seriesInfo name="DOI" value="10.17487/RFC5280"/>
-        </reference>
-        <reference anchor="RFC2119">
-          <front>
-            <title>Key words for use in RFCs to Indicate Requirement Levels</title>
-            <author fullname="S. Bradner" initials="S." surname="Bradner">
-              <organization/>
-            </author>
-            <date month="March" year="1997"/>
-            <abstract>
-              <t>In many standards track documents several words are used to signify the requirements in the specification.  These words are often capitalized. This document defines these words as they should be interpreted in IETF documents.  This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</t>
-            </abstract>
-          </front>
-          <seriesInfo name="BCP" value="14"/>
-          <seriesInfo name="RFC" value="2119"/>
-          <seriesInfo name="DOI" value="10.17487/RFC2119"/>
-        </reference>
-        <reference anchor="RFC8174">
-          <front>
-            <title>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</title>
-            <author fullname="B. Leiba" initials="B." surname="Leiba">
-              <organization/>
-            </author>
-            <date month="May" year="2017"/>
-            <abstract>
-              <t>RFC 2119 specifies common key words that may be used in protocol  specifications.  This document aims to reduce the ambiguity by clarifying that only UPPERCASE usage of the key words have the  defined special meanings.</t>
-            </abstract>
-          </front>
-          <seriesInfo name="BCP" value="14"/>
-          <seriesInfo name="RFC" value="8174"/>
-          <seriesInfo name="DOI" value="10.17487/RFC8174"/>
-        </reference>
-        <reference anchor="RFC9147">
-          <front>
-            <title>The Datagram Transport Layer Security (DTLS) Protocol Version 1.3</title>
-            <author fullname="E. Rescorla" initials="E." surname="Rescorla">
-              <organization/>
-            </author>
-            <author fullname="H. Tschofenig" initials="H." surname="Tschofenig">
-              <organization/>
-            </author>
-            <author fullname="N. Modadugu" initials="N." surname="Modadugu">
-              <organization/>
-            </author>
-            <date month="April" year="2022"/>
-            <abstract>
-              <t>This document specifies version 1.3 of the Datagram Transport Layer Security (DTLS) protocol. DTLS 1.3 allows client/server applications to communicate over the Internet in a way that is designed to prevent eavesdropping, tampering, and message forgery.</t>
-              <t>The DTLS 1.3 protocol is based on the Transport Layer Security (TLS) 1.3 protocol and provides equivalent security guarantees with the exception of order protection / non-replayability.  Datagram semantics of the underlying transport are preserved by the DTLS protocol.</t>
-              <t>This document obsoletes RFC 6347.</t>
-            </abstract>
-          </front>
-          <seriesInfo name="RFC" value="9147"/>
-          <seriesInfo name="DOI" value="10.17487/RFC9147"/>
-        </reference>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8446.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5280.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9147.xml"/>
       </references>
       <references>
         <name>Informative References</name>
@@ -736,89 +645,11 @@ allow the attacker to impersonate a server for the lifetime of the certificate.<
           </front>
           <seriesInfo name="27th USENIX Security Symposium" value=""/>
         </reference>
-        <reference anchor="RFC8032">
-          <front>
-            <title>Edwards-Curve Digital Signature Algorithm (EdDSA)</title>
-            <author fullname="S. Josefsson" initials="S." surname="Josefsson">
-              <organization/>
-            </author>
-            <author fullname="I. Liusvaara" initials="I." surname="Liusvaara">
-              <organization/>
-            </author>
-            <date month="January" year="2017"/>
-            <abstract>
-              <t>This document describes elliptic curve signature scheme Edwards-curve Digital Signature Algorithm (EdDSA).  The algorithm is instantiated with recommended parameters for the edwards25519 and edwards448 curves.  An example implementation and test vectors are provided.</t>
-            </abstract>
-          </front>
-          <seriesInfo name="RFC" value="8032"/>
-          <seriesInfo name="DOI" value="10.17487/RFC8032"/>
-        </reference>
-        <reference anchor="RFC3820">
-          <front>
-            <title>Internet X.509 Public Key Infrastructure (PKI) Proxy Certificate Profile</title>
-            <author fullname="S. Tuecke" initials="S." surname="Tuecke">
-              <organization/>
-            </author>
-            <author fullname="V. Welch" initials="V." surname="Welch">
-              <organization/>
-            </author>
-            <author fullname="D. Engert" initials="D." surname="Engert">
-              <organization/>
-            </author>
-            <author fullname="L. Pearlman" initials="L." surname="Pearlman">
-              <organization/>
-            </author>
-            <author fullname="M. Thompson" initials="M." surname="Thompson">
-              <organization/>
-            </author>
-            <date month="June" year="2004"/>
-            <abstract>
-              <t>This document forms a certificate profile for Proxy Certificates, based on X.509 Public Key Infrastructure (PKI) certificates as defined in RFC 3280, for use in the Internet.  The term Proxy Certificate is used to describe a certificate that is derived from, and signed by, a normal X.509 Public Key End Entity Certificate or by another Proxy Certificate for the purpose of providing restricted proxying and delegation within a PKI based authentication system.  [STANDARDS-TRACK]</t>
-            </abstract>
-          </front>
-          <seriesInfo name="RFC" value="3820"/>
-          <seriesInfo name="DOI" value="10.17487/RFC3820"/>
-        </reference>
-        <reference anchor="RFC8555">
-          <front>
-            <title>Automatic Certificate Management Environment (ACME)</title>
-            <author fullname="R. Barnes" initials="R." surname="Barnes">
-              <organization/>
-            </author>
-            <author fullname="J. Hoffman-Andrews" initials="J." surname="Hoffman-Andrews">
-              <organization/>
-            </author>
-            <author fullname="D. McCarney" initials="D." surname="McCarney">
-              <organization/>
-            </author>
-            <author fullname="J. Kasten" initials="J." surname="Kasten">
-              <organization/>
-            </author>
-            <date month="March" year="2019"/>
-            <abstract>
-              <t>Public Key Infrastructure using X.509 (PKIX) certificates are used for a number of purposes, the most significant of which is the authentication of domain names.  Thus, certification authorities (CAs) in the Web PKI are trusted to verify that an applicant for a certificate legitimately represents the domain name(s) in the certificate.  As of this writing, this verification is done through a collection of ad hoc mechanisms.  This document describes a protocol that a CA and an applicant can use to automate the process of verification and certificate issuance.  The protocol also provides facilities for other certificate management functions, such as certificate revocation.</t>
-            </abstract>
-          </front>
-          <seriesInfo name="RFC" value="8555"/>
-          <seriesInfo name="DOI" value="10.17487/RFC8555"/>
-        </reference>
-        <reference anchor="RFC5912">
-          <front>
-            <title>New ASN.1 Modules for the Public Key Infrastructure Using X.509 (PKIX)</title>
-            <author fullname="P. Hoffman" initials="P." surname="Hoffman">
-              <organization/>
-            </author>
-            <author fullname="J. Schaad" initials="J." surname="Schaad">
-              <organization/>
-            </author>
-            <date month="June" year="2010"/>
-            <abstract>
-              <t>The Public Key Infrastructure using X.509 (PKIX) certificate format, and many associated formats, are expressed using ASN.1.  The current ASN.1 modules conform to the 1988 version of ASN.1.  This document updates those ASN.1 modules to conform to the 2002 version of ASN.1. There are no bits-on-the-wire changes to any of the formats; this is simply a change to the syntax.  This document is not an Internet  Standards Track specification; it is published for informational  purposes.</t>
-            </abstract>
-          </front>
-          <seriesInfo name="RFC" value="5912"/>
-          <seriesInfo name="DOI" value="10.17487/RFC5912"/>
-        </reference>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5246.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8032.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3820.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8555.xml"/>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5912.xml"/>
       </references>
     </references>
     <section anchor="module">
