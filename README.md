@@ -46,6 +46,8 @@ To create your own output files, use the [tools webservice](https://author-tools
 ## Viewing Diffs
 Diffs via GitHub:
 * [All editing updates made before AUTH48](https://github.com/rfc-editor/draft-ietf-tls-subcerts/compare/3bb5f1a..9ab138d)
+* [https://www.rfc-editor.org/authors/rfc9345-diff.html](https://www.rfc-editor.org/authors/rfc9345-diff.html)
+* [https://www.rfc-editor.org/authors/rfc9345-rfcdiff.html](https://www.rfc-editor.org/authors/rfc9345-rfcdiff.html)
 
 More information on using GitHub to view diffs can be found here: [Comparing commits](https://docs.github.com/en/github/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
 
