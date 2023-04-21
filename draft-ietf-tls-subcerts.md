@@ -354,7 +354,7 @@ The DelegatedCredential has the following structure:
    struct {
      Credential cred;
      SignatureScheme algorithm;
-     opaque signature<0..2^16-1>;
+     opaque signature<1..2^16-1>;
    } DelegatedCredential;
 ~~~~~~~~~~
 
