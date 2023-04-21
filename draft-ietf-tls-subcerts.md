@@ -1,7 +1,7 @@
 ---
 title: Delegated Credentials for (D)TLS
 abbrev:
-docname: draft-ietf-tls-subcerts-15
+docname: draft-ietf-tls-subcerts-latest
 submissionType: IETF
 date: January 2023
 category: std
@@ -73,7 +73,7 @@ informative:
       -
         ins: D. Stebila
 
-      - 
+      -
         ins: N. Sullivan
       seriesinfo: IEEE Trustcom/BigDataSE/ISPA 2015
       date: 2015
@@ -337,7 +337,7 @@ dc_cert_verify_algorithm:
 
 : The signature algorithm of the Credential key pair, where the type
   SignatureScheme is as defined in {{RFC8446}}. This is expected to be
-  the same as the sender's CertificateVerify.algorithm (as described in {{validating-a-delegated-credential}}).  
+  the same as the sender's CertificateVerify.algorithm (as described in {{validating-a-delegated-credential}}).
   When
   using RSA, the public key MUST NOT use the rsaEncryption OID.  As a result,
   the following algorithms are not allowed for use with delegated credentials:
@@ -612,7 +612,7 @@ may result in resuming connections for which the delegated credential has expire
 ## Privacy Considerations
 
 Delegated credentials can be valid for 7 days (by default), and it is much easier for a
-service to create delegated credentials than a certificate signed by a CA.  
+service to create delegated credentials than a certificate signed by a CA.
 A service could determine the client
 time and clock skew by creating several delegated credentials with
 different expiry timestamps and observing which credentials the client accepts.
@@ -632,7 +632,7 @@ When (D)TLS 1.2 servers support RSA key exchange, they may be vulnerable to atta
 that allow forging an RSA signature over an arbitrary message [BLEI].
 The TLS 1.2 specification describes a strategy for preventing these attacks
  that requires careful implementation of timing-resistant countermeasures.
-(See {{Section 7.4.7.1 of RFC5246}}.)
+(See {{Section 7.4.7.1 of ?RFC5246}}.)
 
 Experience shows that, in practice, server implementations may fail to fully
 stop these attacks due to the complexity of this mitigation [ROBOT].
