@@ -432,8 +432,12 @@ for which a corresponding delegated credential does not exist or are
 otherwise unsuitable for the connection.
 
 The server MUST send the delegated credential as an extension in the
-CertificateEntry of its end-entity certificate; the client SHOULD ignore
-delegated credentials sent as extensions to any other certificate.
+CertificateEntry of its end-entity certificate; the client MUST NOT use
+delegated credentials sent as extensions to any other certificate, and
+SHOULD ignore them, but MAY abort the handshake with an "illegal_parameter"
+alert. If the server sends multiple delegated credentials extensions
+in a single CertificateEntry, the client MUST abort the handshake with
+an "illegal_parameter" alert.
 
 The algorithm field MUST be of a type advertised by the client in the
 "signature_algorithms" extension of the ClientHello message, and
@@ -458,8 +462,12 @@ extension is not present, the client MUST NOT send a delegated credential.
 When a (D)TLS version negotiated is less than 1.3, the client MUST ignore this extension.
 
 The client MUST send the delegated credential as an extension in the
-CertificateEntry of its end-entity certificate; the server SHOULD ignore
-delegated credentials sent as extensions to any other certificate.
+CertificateEntry of its end-entity certificate; the server MUST NOT use
+delegated credentials sent as extensions to any other certificate, and
+SHOULD ignore them, but MAY abort the handshake with an "illegal_parameter"
+alert. If the client sends multiple delegated credentials extensions
+in a single CertificateEntry, the server MUST abort the handshake with
+an "illegal_parameter" alert.
 
 The algorithm field MUST be of a type advertised by the server
 in the "signature_algorithms" extension of the CertificateRequest message,
