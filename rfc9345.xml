@@ -48,7 +48,7 @@
 endpoints and the certification authority can create limitations.  For
 example, the lifetime of certificates, how they may be used, and the
 algorithms they support are ultimately determined by the
-Certification Authority (CA).  This document describes a mechanism to
+Certification Authority (CA).  This document describes a mechanism
 to overcome some of these limitations by enabling operators to
 delegate their own credentials for use in TLS and DTLS without breaking
 compatibility with peers that do not support this specification.</t>
@@ -89,20 +89,6 @@ Ed25519 <xref target="RFC8032"/> even if their CA does not support them.</t>
       <t>This document refers to the certificate issued by the CA as a "certificate",
 or "delegation certificate", and the one issued by the operator as a "delegated
 credential" or "DC".</t>
-      <artwork><![CDATA[
-Client            Front-End            Back-End
-  |                   |<--DC distribution->|
-  |----ClientHello--->|                    |
-  |<---ServerHello----|                    |
-  |<---Certificate----|                    |
-  |<---CertVerify-----|                    |
-  |        ...        |                    |
-
-Legend:
-Client: (D)TLS client
-Front-End: (D)TLS server (could be a TLS-termination service like a CDN)
-Back-End: Service with access to a private key
-]]></artwork>
     </section>
     <section anchor="conventions-and-terminology">
       <name>Conventions and Terminology</name>
@@ -119,7 +105,22 @@ fields: a validity interval and a public key (along with its associated
 signature algorithm).  The signature on the delegated credential indicates a delegation
 from the certificate that is issued to the peer.  The private key
 used to sign a credential corresponds to the public key of the peer's
-X.509 end-entity certificate <xref target="RFC5280"/>.</t>
+X.509 end-entity certificate <xref target="RFC5280"/>. <xref target="fig1"/> shows the intended deployment architecture.</t>
+ <figure anchor="fig1" title="Delegated Credentials Deployment Architecture">
+      <artwork><![CDATA[
+Client            Front-End            Back-End
+  |                   |<--DC distribution->|
+  |----ClientHello--->|                    |
+  |<---ServerHello----|                    |
+  |<---Certificate----|                    |
+  |<---CertVerify-----|                    |
+  |        ...        |                    |
+
+Legend:
+Client: (D)TLS client
+Front-End: (D)TLS server (could be a TLS-termination service like a CDN)
+Back-End: Service with access to a private key
+]]></artwork></figure>
       <t>A (D)TLS handshake that uses delegated credentials differs from a standard handshake
 in a few important ways:</t>
       <ul spacing="normal">
@@ -242,7 +243,7 @@ other certificates, it is valid to use them to issue other signed
 objects as long as the certificate contains the digitalSignature KeyUsage
 (<xref section="4.2.1.3" sectionFormat="comma" target="RFC5280"/>).  (All certificates compatible with TLS 1.3 are
 required to contain the digitalSignature KeyUsage.)  This document defines a new signed
-object format that would encode only the semantics that are needed for this
+object format that encodes only the semantics that are needed for this
 application.  The Credential has the following structure:</t>
       <artwork><![CDATA[
    struct {
@@ -281,7 +282,7 @@ rsa_pss_rsae_sha256, rsa_pss_rsae_sha384, and rsa_pss_rsae_sha512.</t>
    struct {
      Credential cred;
      SignatureScheme algorithm;
-     opaque signature<0..2^16-1>;
+     opaque signature<1..2^16-1>;
    } DelegatedCredential;
 ]]></artwork>
       <dl>
@@ -350,8 +351,11 @@ credential is when the SignatureSchemes listed only contain signature schemes
 for which a corresponding delegated credential does not exist or are
 otherwise unsuitable for the connection.</t>
           <t>The server <bcp14>MUST</bcp14> send the delegated credential as an extension in the
-CertificateEntry of its end-entity certificate; the client <bcp14>SHOULD</bcp14> ignore
-delegated credentials sent as extensions to any other certificate.</t>
+CertificateEntry of its end-entity certificate; the client <bcp14>MUST NOT</bcp14> use
+delegated credentials sent as extensions to any other certificate, and <bcp14>SHOULD</bcp14> ignore them, but <bcp14>MAY</bcp14> abort the handshake with
+an "illegal_parameter" alert.  If the server sends multiple delegated
+credentials extensions in a single CertificateEntry, the client <bcp14>MUST</bcp14>
+abort the handshake with an "illegal_parameter" alert.</t>
           <t>The algorithm field <bcp14>MUST</bcp14> be of a type advertised by the client in the
 "signature_algorithms" extension of the ClientHello message, and
 the dc_cert_verify_algorithm field <bcp14>MUST</bcp14> be of a
@@ -372,9 +376,8 @@ CertificateRequest, then the server <bcp14>MUST</bcp14> abort with an
           <t>If the extension is present, the client <bcp14>MAY</bcp14> send a delegated credential; if the
 extension is not present, the client <bcp14>MUST NOT</bcp14> send a delegated credential.
 When a (D)TLS version negotiated is less than 1.3, the client <bcp14>MUST</bcp14> ignore this extension.</t>
-          <t>The client <bcp14>MUST</bcp14> send the delegated credential as an extension in the
-CertificateEntry of its end-entity certificate; the server <bcp14>SHOULD</bcp14> ignore
-delegated credentials sent as extensions to any other certificate.</t>
+          <t>The client <bcp14>MUST</bcp14> send the delegated credential as an extension in the CertificateEntry of its end-entity certificate; the server
+<bcp14>MUST NOT</bcp14> use delegated credentials sent as extensions to any other certificate, and <bcp14>SHOULD</bcp14> ignore them, but <bcp14>MAY</bcp14> abort the handshake with an "illegal_parameter" alert.  If the client sends multiple delegated credentials extensions in a single CertificateEntry, the server <bcp14>MUST</bcp14> abort the handshake with an "illegal_parameter" alert.</t>
           <t>The algorithm field <bcp14>MUST</bcp14> be of a type advertised by the server
 in the "signature_algorithms" extension of the CertificateRequest message,
 and the dc_cert_verify_algorithm field <bcp14>MUST</bcp14> be of a type
@@ -397,7 +400,7 @@ as part of certificate validation.)</li>
             <li>Verify that the delegated credential's remaining validity period is no more
 than the maximum validity period. This is done by asserting that the expiry
 time does not exceed the current time plus the maximum validity period (7
-days by default).</li>
+days by default) and that the expiry time is less than the certificate's expiry_time.</li>
             <li>Verify that dc_cert_verify_algorithm matches
 the scheme indicated in the peer's CertificateVerify message and that the
 algorithm is allowed for use with delegated credentials.</li>
@@ -516,15 +519,7 @@ may result in resuming connections for which the delegated credential has expire
       </section>
       <section anchor="privacy-considerations">
         <name>Privacy Considerations</name>
-        <t>Delegated credentials can be valid for 7 days (by default), and it is much easier for a
-service to create delegated credentials than a certificate signed by a CA.<br/>
-A service could determine the client
-time and clock skew by creating several delegated credentials with
-different expiry timestamps and observing which credentials the client accepts.
-Since client time can be unique to a particular client, privacy-sensitive
-clients who do not trust the service, such as browsers in incognito mode, might
-not want to advertise support for delegated credentials, or might limit the number of
-probes that a server can perform.</t>
+        <t>Delegated credentials can be valid for 7 days (by default), and it is much easier for a service to create delegated credentials than a certificate signed by a CA. A service could determine the client time and clock skew by creating several delegated credentials with different expiry timestamps and observing which credentials the client accepts. Since client time can be unique to a particular client, privacy-sensitive clients who do not trust the service, such as browsers in incognito mode, might not want to advertise support for delegated credentials, or might limit the number of probes that a server can perform.</t>
       </section>
       <section anchor="the-impact-of-signature-forgery-attacks">
         <name>The Impact of Signature Forgery Attacks</name>
