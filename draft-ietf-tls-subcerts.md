@@ -493,7 +493,8 @@ delegation certificate's notBefore value plus DelegatedCredential.cred.valid_tim
 1. Verify that the delegated credential's remaining validity period is no more
    than the maximum validity period. This is done by asserting that the expiry
    time does not exceed the current time plus the maximum validity period (7
-   days by default).
+   days by default) and that the the expiry time is less than the certificate's
+   expiry_time.
 1. Verify that dc_cert_verify_algorithm matches
    the scheme indicated in the peer's CertificateVerify message and that the
    algorithm is allowed for use with delegated credentials.
