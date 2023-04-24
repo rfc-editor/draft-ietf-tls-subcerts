@@ -3,7 +3,7 @@ title: Delegated Credentials for (D)TLS
 abbrev:
 docname: draft-ietf-tls-subcerts-15
 submissionType: IETF
-date: January 2023
+date: April 2023
 category: std
 
 ipr: trust200902
@@ -55,6 +55,7 @@ normative:
         ISO/IEC: 8825-1:2021
 
 informative:
+  RFC5246:
   XPROT:
       title: On the Security of TLS 1.3 and QUIC Against Weaknesses in PKCS#1 v1.5 Encryption
       author:
@@ -107,7 +108,7 @@ The organizational separation between operators of TLS and DTLS
 endpoints and the certification authority can create limitations.  For
 example, the lifetime of certificates, how they may be used, and the
 algorithms they support are ultimately determined by the
-CA.  This document describes a mechanism to
+Certification Authority (CA).  This document describes a mechanism to
 to overcome some of these limitations by enabling operators to
 delegate their own credentials for use in TLS and DTLS without breaking
 compatibility with peers that do not support this specification.
