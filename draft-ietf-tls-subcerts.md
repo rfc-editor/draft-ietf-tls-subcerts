@@ -315,7 +315,7 @@ other certificates, it is valid to use them to issue other signed
 objects as long as the certificate contains the digitalSignature KeyUsage
 ({{RFC5280, Section 4.2.1.3}}).  (All certificates compatible with TLS 1.3 are
 required to contain the digitalSignature KeyUsage.)  This document defines a new signed
-object format that would encode only the semantics that are needed for this
+object format that encodes only the semantics that are needed for this
 application.  The Credential has the following structure:
 
 ~~~~~~~~~~
@@ -355,7 +355,7 @@ The DelegatedCredential has the following structure:
    struct {
      Credential cred;
      SignatureScheme algorithm;
-     opaque signature<0..2^16-1>;
+     opaque signature<1..2^16-1>;
    } DelegatedCredential;
 ~~~~~~~~~~
 
