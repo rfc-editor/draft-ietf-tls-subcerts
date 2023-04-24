@@ -154,6 +154,19 @@ This document refers to the certificate issued by the CA as a "certificate",
 or "delegation certificate", and the one issued by the operator as a "delegated
 credential" or "DC".
 
+# Conventions and Terminology
+
+{::boilerplate bcp14-tagged}
+
+# Solution Overview
+
+A delegated credential (DC) is a digitally signed data structure with two semantic
+fields: a validity interval and a public key (along with its associated
+signature algorithm).  The signature on the delegated credential indicates a delegation
+from the certificate that is issued to the peer.  The private key
+used to sign a credential corresponds to the public key of the peer's
+X.509 end-entity certificate {{RFC5280}}. {{setup}} shows the intended deployment architecture.
+
 ~~~~~~~~~~
 Client            Front-End            Back-End
   |                   |<--DC distribution->|
@@ -168,20 +181,7 @@ Client: (D)TLS client
 Front-End: (D)TLS server (could be a TLS-termination service like a CDN)
 Back-End: Service with access to a private key
 ~~~~~~~~~~
-
-
-# Conventions and Terminology
-
-{::boilerplate bcp14-tagged}
-
-# Solution Overview
-
-A delegated credential (DC) is a digitally signed data structure with two semantic
-fields: a validity interval and a public key (along with its associated
-signature algorithm).  The signature on the delegated credential indicates a delegation
-from the certificate that is issued to the peer.  The private key
-used to sign a credential corresponds to the public key of the peer's
-X.509 end-entity certificate {{RFC5280}}.
+{: #setup title="Delegated Credentials Deployment Architecture"}
 
 A (D)TLS handshake that uses delegated credentials differs from a standard handshake
 in a few important ways:
